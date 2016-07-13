@@ -5,6 +5,10 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
+const server_resp = "Kopihao Testing bot 001"
+const verification = "KopihaoTestbot001"
+const token = "EAAKhNU8d9HEBAL3XLtIu4pQZCSt3D3LqUXGPtZBZBJ2BRpQQTtmaNoUr9ZAnVtZBMKVJsVpDARUKoLu2YYrAqPfXwPQJ8wQY9Sw4m4ysCezFtI0a600VJHcygHtqt2n1ZCOJl4m1IN3rrgy7ILGuhmzwxde50LX7h8LZA8V8rZAxgAZDZD"
+
 app.set('port', (process.env.PORT || 5000))
 
 // parse application/x-www-form-urlencoded
@@ -15,12 +19,13 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a secret bot')
+	res.send(server_resp)
 })
+
 
 // for facebook verification
 app.get('/webhook/', function (req, res) {
-	if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+	if (req.query['hub.verify_token'] === verification) {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send('Error, wrong token')
@@ -52,7 +57,7 @@ app.post('/webhook/', function (req, res) {
 
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.PAGE_ACCESS_TOKEN
-const token = "<PAGE_ACCESS_TOKEN>"
+//const token = "<PAGE_ACCESS_TOKEN>"
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
