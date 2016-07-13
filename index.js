@@ -6,7 +6,7 @@ const request = require('request')
 const app = express()
 
 const server_resp = "Kopihao Testing bot 001"
-const verification = "KopihaoTestbot001"
+const fb_secret = "KopihaoTestbot001"
 const token = "EAAKhNU8d9HEBAL3XLtIu4pQZCSt3D3LqUXGPtZBZBJ2BRpQQTtmaNoUr9ZAnVtZBMKVJsVpDARUKoLu2YYrAqPfXwPQJ8wQY9Sw4m4ysCezFtI0a600VJHcygHtqt2n1ZCOJl4m1IN3rrgy7ILGuhmzwxde50LX7h8LZA8V8rZAxgAZDZD"
 
 app.set('port', (process.env.PORT || 5000))
@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 
 // for facebook verification
 app.get('/webhook/', function (req, res) {
-	if (req.query['hub.verify_token'] === verification) {
+	if (req.query['hub.verify_token'] === fb_secret) {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send('Error, wrong token')
