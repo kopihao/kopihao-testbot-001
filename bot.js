@@ -19,7 +19,8 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send(server_resp)
+	var loadTimeInMS = Date.now()
+	res.send(loadTimeInMS+" : "+server_resp)
 })
 
 
