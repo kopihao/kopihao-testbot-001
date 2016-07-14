@@ -6,8 +6,8 @@ const request = require('request')
 const app = express()
 
 const server_resp = "kopihao's testing bot 001"
-const fb_secret = "KopihaoTestbot001"
-const token = "EAAKhNU8d9HEBAL3XLtIu4pQZCSt3D3LqUXGPtZBZBJ2BRpQQTtmaNoUr9ZAnVtZBMKVJsVpDARUKoLu2YYrAqPfXwPQJ8wQY9Sw4m4ysCezFtI0a600VJHcygHtqt2n1ZCOJl4m1IN3rrgy7ILGuhmzwxde50LX7h8LZA8V8rZAxgAZDZD"
+const fb_secret = "kopihao_test_a_fmb_bot_001"
+const token = "EAAKhNU8d9HEBACyLbMFviq4utVz51BOo5cqsIA1SZBCZCdiN841X4hwoJHT27MTUcdsw7E5psNcOmGdWSF0d6BAeibJnEHqA8iUqCQ6uDgG1HfAIYx5m5ZCxZBuYmcg1YYtZAnpy9k34w2HR1vWEgxJk0DoxI1NYz8iD0m9GZCyQZDZD"
 
 app.set('port', (process.env.PORT || 5000))
 
